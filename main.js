@@ -26,11 +26,21 @@ divPrincipal.appendChild(enterInput);
 boutonIncrementer.addEventListener("click", () => {
   valeurDuCompteur += 1;
   compteur.textContent = valeurDuCompteur;
+
+  if (valeurDuCompteur > 999) {
+    alert("La valeur maximale est de 999");
+    valeurDuCompteur = 0;
+    compteur.textContent = 0;
+  } else {
+    compteur.textContent = valeurDuCompteur;
+  }
 });
 boutonDecrementer.addEventListener("click", () => {
   valeurDuCompteur -= 1;
   compteur.textContent = valeurDuCompteur;
+
   if (valeurDuCompteur < 0) {
+    alert("Impossible d'aller en dessous de 0");
     valeurDuCompteur = 0;
     compteur.textContent = 0;
   } else {
@@ -47,7 +57,7 @@ enterInput.addEventListener("keyup", () => {
   if (isNaN(valeurDuCompteur)) {
     valeurDuCompteur = 0;
     compteur.textContent = 0;
-  } else if (valeurDuCompteur < 0) {
+  } else if (valeurDuCompteur < 0 || valeurDuCompteur > 999) {
     valeurDuCompteur = 0;
     compteur.textContent = 0;
   } else {
