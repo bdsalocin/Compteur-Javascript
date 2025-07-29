@@ -1,27 +1,28 @@
 let valeurDuCompteur = 0;
 
-const divPrincipal = document.createElement("div");
-const titreCompteur = document.createElement("h1");
-titreCompteur.textContent = "My counter";
-const compteur = document.createElement("h3");
-compteur.textContent = valeurDuCompteur;
-const boutonIncrementer = document.createElement("button");
-boutonIncrementer.textContent = "Incrémenter +";
-const boutonDecrementer = document.createElement("button");
-boutonDecrementer.textContent = "Décrémenter -";
-const boutonReset = document.createElement("button");
-boutonReset.textContent = "Reset";
-const spanInput = document.createElement("span");
-const enterInput = document.createElement("input");
+const createAndAddElement = (element, parent, contenu) => {
+  const nouvelELement = document.createElement(element);
+  parent.appendChild(nouvelELement);
+  nouvelELement.textContent = contenu;
+  return nouvelELement;
+};
 
-document.body.appendChild(divPrincipal);
-divPrincipal.appendChild(titreCompteur);
-divPrincipal.appendChild(compteur);
-divPrincipal.appendChild(boutonIncrementer);
-divPrincipal.appendChild(boutonDecrementer);
-divPrincipal.appendChild(boutonReset);
-divPrincipal.appendChild(spanInput);
-divPrincipal.appendChild(enterInput);
+const divPrincipal = createAndAddElement("div", document.body);
+const titreCompteur = createAndAddElement("h1", divPrincipal, "My Counter");
+const compteur = createAndAddElement("h3", divPrincipal, valeurDuCompteur);
+const boutonIncrementer = createAndAddElement(
+  "button",
+  divPrincipal,
+  "Incrementer +"
+);
+const boutonDecrementer = createAndAddElement(
+  "button",
+  divPrincipal,
+  "Decrementer -"
+);
+const boutonReset = createAndAddElement("button", divPrincipal, "Reset");
+const spanInput = createAndAddElement("span", divPrincipal);
+const enterInput = createAndAddElement("input", divPrincipal);
 
 boutonIncrementer.addEventListener("click", (e) => {
   valeurDuCompteur += 1;
