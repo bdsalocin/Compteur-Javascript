@@ -54,30 +54,3 @@ enterInput.addEventListener("keyup", () => {
     compteur.textContent = valeurDuCompteur;
   }
 });
-
-boutonIncrementer.addEventListener("click", () => {
-  boutonIncrementer.style.backgroundColor = "red";
-  if (boutonIncrementer.style.backgroundColor == "red") {
-    boutonIncrementer.addEventListener("click", () => {
-      boutonIncrementer.style.backgroundColor = "rgb(43, 43, 255)";
-    });
-  }
-});
-
-boutonDecrementer.addEventListener("click", () => {
-  boutonDecrementer.style.backgroundColor = "green";
-  if (boutonDecrementer.style.backgroundColor == "green") {
-    boutonDecrementer.addEventListener("click", () => {
-      boutonDecrementer.style.backgroundColor = "white";
-    });
-  }
-});
-
-boutonReset.addEventListener("click", () => {
-  boutonReset.style.backgroundColor = "violet";
-  if (boutonReset.style.backgroundColor == "violet") {
-    boutonReset.addEventListener("click", () => {
-      boutonReset.style.backgroundColor = "red";
-    });
-  }
-});
