@@ -53,6 +53,8 @@ boutonDecrementer.addEventListener("click", (e) => {
 boutonReset.addEventListener("click", (e) => {
   valeurDuCompteur = 0;
   compteur.textContent = valeurDuCompteur;
+  enterInput.value = "";
+  spanInput.textContent = " max : 999";
   console.log(e.button);
 });
 enterInput.addEventListener("keyup", () => {
