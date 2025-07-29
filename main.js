@@ -64,8 +64,11 @@ enterInput.addEventListener("keyup", () => {
     valeurDuCompteur = 0;
     compteur.textContent = 0;
   } else if (valeurDuCompteur < 0 || valeurDuCompteur > 999) {
+    alert("La limite est comprise entre 0 et 999");
     valeurDuCompteur = 0;
     compteur.textContent = 0;
+    enterInput.value = "";
+    spanInput.textContent = "min : 0 - max : 999";
   } else {
     compteur.textContent = valeurDuCompteur;
   }
