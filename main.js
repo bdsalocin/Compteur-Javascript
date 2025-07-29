@@ -23,7 +23,7 @@ divPrincipal.appendChild(boutonReset);
 divPrincipal.appendChild(spanInput);
 divPrincipal.appendChild(enterInput);
 
-boutonIncrementer.addEventListener("click", () => {
+boutonIncrementer.addEventListener("click", (e) => {
   valeurDuCompteur += 1;
   compteur.textContent = valeurDuCompteur;
 
@@ -34,8 +34,10 @@ boutonIncrementer.addEventListener("click", () => {
   } else {
     compteur.textContent = valeurDuCompteur;
   }
+  console.log(e.button);
 });
-boutonDecrementer.addEventListener("click", () => {
+
+boutonDecrementer.addEventListener("click", (e) => {
   valeurDuCompteur -= 1;
   compteur.textContent = valeurDuCompteur;
 
@@ -46,10 +48,12 @@ boutonDecrementer.addEventListener("click", () => {
   } else {
     compteur.textContent = valeurDuCompteur;
   }
+  console.log(e.button);
 });
-boutonReset.addEventListener("click", () => {
+boutonReset.addEventListener("click", (e) => {
   valeurDuCompteur = 0;
   compteur.textContent = valeurDuCompteur;
+  console.log(e.button);
 });
 enterInput.addEventListener("keyup", () => {
   spanInput.innerText = enterInput.value;
