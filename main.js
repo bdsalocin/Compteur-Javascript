@@ -68,7 +68,7 @@ enterInput.addEventListener("keyup", () => {
     valeurDuCompteur = 0;
     compteur.textContent = 0;
     enterInput.value = "";
-    spanInput.textContent = "∞";
+    spanInput.textContent = "entre 0 et 999 !";
   } else {
     compteur.textContent = valeurDuCompteur;
   }
